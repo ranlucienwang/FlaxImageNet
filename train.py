@@ -125,7 +125,7 @@ def train_step(state, batch, learning_rate_fn):
   dynamic_scale = state.dynamic_scale
   lr = learning_rate_fn(step)
 
-  if dynamic_scale:
+  if dynamic_scale: #Please use this as default.
     grad_fn = dynamic_scale.value_and_grad(
         loss_fn, has_aux=True, axis_name='batch')
     dynamic_scale, is_fin, aux, grads = grad_fn(state.params)
