@@ -1,4 +1,5 @@
 jax==0.4.6
+jax[gpu]==0.4.6
 jaxlib==0.4.6
 absl-py==1.0.0
 clu==0.0.6
