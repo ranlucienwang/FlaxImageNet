@@ -22,7 +22,8 @@ def get_config():
   # Override default configuration to avoid duplication of field definition.
   config = default_lib.get_config()
 
-  config.batch_size = 512
+  config.batch_size = 64
+
   config.cache = True
 
   return config
