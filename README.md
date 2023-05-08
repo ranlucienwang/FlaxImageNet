@@ -50,7 +50,7 @@ we have tested the following GPU and TPU configurations:
 ### Running locally
 
 ```shell
-python main.py --workdir=./imagenet --config=configs/default.py
+python main.py --workdir=./imagenet --config=configs/v100_x8.py
 ```
 
 #### Overriding parameters on the command line
@@ -83,7 +83,7 @@ python -c "
 import tensorflow_datasets as tfds
 tfds.builder('imagenet2012').download_and_prepare(
     download_config=tfds.download.DownloadConfig(
-        manual_dir='$IMAGENET_DOWNLOAD_PATH'))
+        manual_dir="/root/tensorflow_datasets"))
 "
 ```
 
