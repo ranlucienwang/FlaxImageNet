@@ -1,7 +1,8 @@
-jax==0.4.6
+jax[tpu]==0.4.6 -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
 jaxlib==0.4.6
 absl-py==1.0.0
 clu==0.0.6
+numpy==1.22
 flax==0.6.0
 -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
