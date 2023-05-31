@@ -208,3 +208,28 @@ There are two configuratoins available:
 - `configs/v100_x8_mixed_precision.py` : Mixed precision GPU training. Note that
   mixed precision handling is implemented manually with
   [`training.dynamic_scale`](https://github.com/google/flax/blob/main/flax/training/dynamic_scale.py)
+
+#### To Run the Program on Google Cloud TPU VM
+
+1. Create VM using the following command 
+```
+gcloud compute tpus tpu-vm create tpu-name \
+--zone=europe-west4-a \
+--accelerator-type=v3-8 \
+--version=tpu-vm-tf-2.12.0
+```
+2. SSH into the TPU VM
+```
+gcloud compute tpus tpu-vm ssh tpu-name \
+  --zone europe-west4-a
+```
+3. Install requirements using _requirements_tpu.txt_
+4. Perform additional installation steps
+```
+pip3 install numpy --upgrade
+pip3 install jax[tpu] -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
+```
+5. Run the main command
+```
+python3 main.py --workdir=./imagenet_default --config=configs/tpu.py 
+```
