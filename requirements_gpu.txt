@@ -10,6 +10,6 @@ jax[cuda11_cudnn805]>=0.3.16  # change to jax[tpu] if running on tpus
 ml-collections==0.1.0
 numpy==1.22.0
 optax==0.1.3
-orbax==0.1.8
+orbax==0.1.7
 tensorflow==2.9.3
 tensorflow-datasets==4.4.0
