@@ -276,7 +276,7 @@ def train_and_evaluate(config: ml_collections.ConfigDict,
   else:
     input_dtype = tf.float32
 
-  dataset_builder = tfds.builder(config.dataset)
+  dataset_builder = tfds.builder('imagenette')
   dataset_builder.download_and_prepare()
   train_iter = create_input_iter(
       dataset_builder, local_batch_size, image_size, input_dtype, train=True,
