@@ -24,7 +24,7 @@ def get_config():
 
   config.batch_size = 64
 
-  config.cache = True
+  config.cache = False
 
   return config
 
